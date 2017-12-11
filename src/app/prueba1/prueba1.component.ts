@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms/src/directives/ng_form';
 
 @Component({
@@ -12,19 +12,27 @@ export class Prueba1Component implements OnInit {
   apellido: string;
   fechanac: string;
   edad: number;
+  mensaje: string;
+  @Output() output = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit() {
   }
+
   guardar() {
     if (this.fechanac) {
       let fecha = new Date(this.fechanac);
       let diferencia = Date.now() - fecha.getTime();
       fecha = new Date(diferencia);
       this.edad = Math.abs(fecha.getUTCFullYear() - 1970);
+      this.mensaje = 'Nombre: ' + this.nombre + ' Apellido: ' + this.apellido + ' Edad: ' + this.edad;
       }
+      this.enviarMensaje();
     }
-  getInput() {
-    return 'Nombre: ' + this.nombre + 'Apellido: ' + this.apellido + 'Edad: ' + this.edad;
+
+  enviarMensaje() {
+    this.output.emit(this.mensaje);
     }
+
 }

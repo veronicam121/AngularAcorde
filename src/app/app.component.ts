@@ -8,6 +8,13 @@ import { Prueba1Component } from './prueba1/prueba1.component';
 })
 export class AppComponent {
   title = 'Aplicación Acorde';
+
+  constructor() { }
+    resultado: string;
+
+    recibirMensaje($event) {
+      this.resultado = $event;
+    }
 }
 
 

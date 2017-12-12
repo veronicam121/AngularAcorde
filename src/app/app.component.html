@@ -2,6 +2,24 @@
   <h1>
     {{title}}
   </h1>
-  <app-prueba1 (output) ="recibirMensaje($event)"></app-prueba1>
+  <form #formulario="ngForm">
+    <div class="form-group row">
+      <label>Nombre:
+        <input type="text" class="form-control" [(ngModel)]="usuario.nombre" name="nombre" placeholder="nombre">
+      </label>
+    </div>
+    <div class="form-group row">
+    <label>Apellido:
+      <input type="text" class="form-control" [(ngModel)]="usuario.apellido" name="apellido" placeholder="apellido">
+    </label>
+    </div>
+    <div class="form-group row">
+      <label>Fecha de Nacimiento:
+        <input type="date" class="form-control" [(ngModel)]="usuario.fechanac" name="fechanac">
+      </label>
+    </div>
+      <button class="btn btn-primary" type="submit" (click)="calcular()">Enviar</button>
+  </form>
+  <app-prueba1 [usuario]="usuario" (output) ="recibirMensaje($event)"></app-prueba1>
   <p>Mensaje del Hijo: </p>{{resultado}}
 <div>

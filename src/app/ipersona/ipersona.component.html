@@ -1,4 +1,4 @@
-<div [ngClass]="{'primero': activado, 'segundo': !activado}">
+<div [ngClass]="{'primero': activado, 'segundo': !activado}" [ngStyle]="{'cursor':'pointer'}">
 <p>
   {{persona.nombre}}
   <br> {{persona.apellido}}
@@ -11,3 +11,8 @@
   <button type="button" class="btn btn-primary" (click)="newPerson()">New Person</button>
 </p>
 </div>
+<ul class="list-group">
+  <li *ngFor = "let h of horas">
+    {{h}}
+  </li>
+</ul>

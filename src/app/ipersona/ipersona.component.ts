@@ -12,6 +12,8 @@ export class IpersonaComponent extends NewPerson implements OnInit {
   persona: Ipersona;
   edad: number;
   activado: boolean;
+  fechas: Date[];
+  horas: string[];
 
   constructor() {
     super();
@@ -34,8 +36,18 @@ export class IpersonaComponent extends NewPerson implements OnInit {
         }
       }
     };
+    this.horas = [];
+    this.fechas = [];
     this.edad = this.persona.calcularEdad(this.persona.fechanac);
     this.activado = true;
+    this.fechas.push(new Date());
+    this.horas.push(new Date().toLocaleTimeString());
+    for (let i = 1 ; i <= 10 ; i++) {
+      let fecha = this.fechas[i - 1];
+      fecha.setHours(fecha.getHours() + 1 );
+      this.horas.push(fecha.toLocaleTimeString());
+      this.fechas.push(fecha);
+    }
   }
 
   newPerson() {

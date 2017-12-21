@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, ViewChild } from '@angular/core';
-import { Prueba1Component } from './prueba1/prueba1.component';
+import { IpersonaComponent } from './ipersona/ipersona.component';
 
 @Component({
   selector: 'app-root',
@@ -8,24 +8,9 @@ import { Prueba1Component } from './prueba1/prueba1.component';
 })
 export class AppComponent {
   title = 'Aplicación Acorde';
-  usuario = {
-    nombre: '',
-    apellido: '',
-    fechanac: ''
-  };
-  resultado: string;
-  @ViewChild(Prueba1Component) child: Prueba1Component;
 
   constructor() {
    }
-
-  recibirMensaje($event) {
-    this.resultado = $event;
-  }
-
-  calcular() {
-    this.child.guardar();
-  }
 }
 
 

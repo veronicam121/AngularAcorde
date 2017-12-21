@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { Prueba1Component } from './prueba1/prueba1.component';
+import { IpersonaComponent } from './ipersona/ipersona.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Prueba1Component
+    IpersonaComponent,
   ],
   imports: [
     BrowserModule,

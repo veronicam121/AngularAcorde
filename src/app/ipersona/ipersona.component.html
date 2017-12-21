@@ -1,0 +1,13 @@
+<div [ngClass]="{'primero': activado, 'segundo': !activado}">
+<p>
+  {{persona.nombre}}
+  <br> {{persona.apellido}}
+  <br> {{persona.fechanac}}
+  <br> {{persona.sexo}}
+  <br> {{edad}}
+  <br> {{persona.email}}
+  <br> {{persona.pais}}
+  <br>
+  <button type="button" class="btn btn-primary" (click)="newPerson()">New Person</button>
+</p>
+</div>
